@@ -42,9 +42,9 @@ namespace AdOptimizator.Controllers.OptimizeAd
             {
                 var titleDecriptionLenght = request.Title.Length + description.Length;
 
-                if ((titleDecriptionLenght + keywordLength) < characterLimit && keywordLength != 0)
+                if ((titleDecriptionLenght + keywordsLength) < characterLimit && keywordsLength != 0)
                 {
-                    if ((titleDecriptionLenght + keywordLength + Constants.IntroductoryText.Length) < characterLimit)
+                    if ((titleDecriptionLenght + keywordsLength + Constants.IntroductoryText.Length) < characterLimit)
                     {
                         text = FormatText(Constants.IntroductoryText + request.Title, description, FormatTags(request.Keywords));
                     }
@@ -69,9 +69,9 @@ namespace AdOptimizator.Controllers.OptimizeAd
             {
                 var titleLinkLenght = request.Title.Length + Constants.DefaultLinkLenght;
 
-                if ((titleLinkLenght + keywordLength) < characterLimit && keywordLength != 0)
+                if ((titleLinkLenght + keywordsLength) < characterLimit && keywordsLength != 0)
                 {
-                    if ((titleLinkLenght + keywordLength + Constants.IntroductoryText.Length) < characterLimit)
+                    if ((titleLinkLenght + keywordsLength + Constants.IntroductoryText.Length) < characterLimit)
                     {
                         text = FormatText(Constants.IntroductoryText + request.Title, Constants.LinkText, FormatTags(request.Keywords));
                     }
