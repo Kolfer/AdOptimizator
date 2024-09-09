@@ -1,12 +1,11 @@
-﻿using AdOptimizator.Models.OptimizeAd;
-using AdOptimizator.Shared.Constants;
+﻿using AdOptimizer.Models.OptimizeAd;
+using AdOptimizer.Shared.Constants;
 using Microsoft.AspNetCore.Mvc;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace AdOptimizator.Controllers.OptimizeAd
+namespace AdOptimizer.Controllers.OptimizeAd
 {
     [Route("api/")]
-    public class OptimizedAdController : ControllerBase
+    public class OptimizeAdController : ControllerBase
     {
         [HttpPost("optimize-ad")]
         public ActionResult<OptimizeAdResponse> OptimizeAd(OptimizeAdRequest request)
@@ -40,8 +39,7 @@ namespace AdOptimizator.Controllers.OptimizeAd
 
         private string GetFormattedText(OptimizeAdRequest request, int characterLimit)
         {
-            var text = """ """;
-            
+            var text = "";
             var description = string.IsNullOrWhiteSpace(request.Description) ? "" : request.Description;
 
             bool isDescriptionIncluded = request.Title.Length + description.Length < characterLimit && description.Length != 0;
@@ -74,7 +72,6 @@ namespace AdOptimizator.Controllers.OptimizeAd
             {
                 FormatTextWithoutKeywords(title, description, characterLimit);
             }
-
             return text;
         }
 
@@ -111,7 +108,6 @@ namespace AdOptimizator.Controllers.OptimizeAd
             {
                 text = FormatText(title, middleText, FormatTags(keywords));
             }
-
             return text;
         }
 

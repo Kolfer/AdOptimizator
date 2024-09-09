@@ -1,4 +1,4 @@
-﻿namespace AdOptimizator.Shared.Constants
+﻿namespace AdOptimizer.Shared.Constants
 {
     public static class Constants
     {

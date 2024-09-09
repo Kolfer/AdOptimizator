@@ -1,4 +1,4 @@
-﻿namespace AdOptimizator.Models.OptimizeAd
+﻿namespace AdOptimizer.Models.OptimizeAd
 {
     public class OptimizeAdResponse
     {
