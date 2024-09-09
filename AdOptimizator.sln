@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdOptimizator", "AdOptimizator\AdOptimizator.csproj", "{9A125569-FCE6-45BA-834E-3BA77CCAADA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A125569-FCE6-45BA-834E-3BA77CCAADA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A125569-FCE6-45BA-834E-3BA77CCAADA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A125569-FCE6-45BA-834E-3BA77CCAADA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A125569-FCE6-45BA-834E-3BA77CCAADA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F7C690F-F62B-4928-B419-819E6249DE1F}
+	EndGlobalSection
+EndGlobal
