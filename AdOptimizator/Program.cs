@@ -19,6 +19,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=OptimizeAd}/{action=Index}/{id?}");
 
 app.Run();
