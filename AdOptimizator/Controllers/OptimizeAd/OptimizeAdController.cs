@@ -14,22 +14,22 @@ namespace AdOptimizer.Controllers.OptimizeAd
 
             if (request == null)
             {
-                return BadRequest("Request is empty.");
+                return BadRequest(Errors.EmptyRequest);
             }
 
             if (string.IsNullOrWhiteSpace(request.Title))
             {
-                return BadRequest("Title cannot be empty.");
+                return BadRequest(Errors.EmptyTitle);
             }
 
             if (!Constants.SocialMedia.Keys.Any(c => c.ToLower().Equals(request.Platform.ToLower())))
             {
-                return BadRequest("Platform is unknown.");
+                return BadRequest(Errors.UnknownPlatform);
             }
 
             if (request.Title.Length + Constants.DefaultLinkLength < characterLimit)
             {
-                return BadRequest("Title and link won't fit in post. Try decreasing size of the title.");
+                return BadRequest(Errors.TitleExceedsCharacterLimit);
             }
 
             var result = GetFormattedText(request, characterLimit);
