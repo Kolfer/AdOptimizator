@@ -83,10 +83,10 @@ namespace AdOptimizer.UnitTests.Controllers
 
             var result = _controller.OptimizeAd(request);
 
-            var contentResult = Assert.IsType<ContentResult>(result.Result);
-            Assert.Contains(_shortTitle, contentResult.Content);
-            Assert.Contains(_shortDescription, contentResult.Content);
-            Assert.Contains(_defaultKeyword, contentResult.Content);
+            var optimizedAdResponse = Assert.IsType<OptimizeAdResponse>(result.Value);
+            Assert.Contains(_shortTitle, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_shortDescription, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_defaultKeyword, optimizedAdResponse.OptimizedAd);
         }
 
         [Theory]
@@ -104,11 +104,11 @@ namespace AdOptimizer.UnitTests.Controllers
 
             var result = _controller.OptimizeAd(request);
 
-            var contentResult = Assert.IsType<ContentResult>(result.Result);
-            Assert.Contains(_shortTitle, contentResult.Content);
-            Assert.Contains(_shortDescription, contentResult.Content);
-            Assert.Contains(_defaultKeyword, contentResult.Content);
-            Assert.Equal(expectedContentLength, contentResult.Content?.Length);
+            var optimizedAdResponse = Assert.IsType<OptimizeAdResponse>(result.Value);
+            Assert.Contains(_shortTitle, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_shortDescription, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_defaultKeyword, optimizedAdResponse.OptimizedAd);
+            Assert.Equal(expectedContentLength, optimizedAdResponse.OptimizedAd?.Length);
         }
 
         [Fact]
@@ -119,11 +119,11 @@ namespace AdOptimizer.UnitTests.Controllers
 
             var result = _controller.OptimizeAd(request);
 
-            var contentResult = Assert.IsType<ContentResult>(result.Result);
-            Assert.Contains(Constants.IntroductoryText, contentResult.Content);
-            Assert.Contains(_shortTitle, contentResult.Content);
-            Assert.Contains(_shortDescription, contentResult.Content);
-            Assert.Contains(_defaultKeyword, contentResult.Content);
+            var optimizedAdResponse = Assert.IsType<OptimizeAdResponse>(result.Value);
+            Assert.Contains(Constants.IntroductoryText, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_shortTitle, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_shortDescription, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_defaultKeyword, optimizedAdResponse.OptimizedAd);
         }
 
         [Fact]
@@ -133,10 +133,10 @@ namespace AdOptimizer.UnitTests.Controllers
 
             var result = _controller.OptimizeAd(request);
 
-            var contentResult = Assert.IsType<ContentResult>(result.Result);
-            Assert.Contains(Constants.IntroductoryText, contentResult.Content);
-            Assert.Contains(_shortTitle, contentResult.Content);
-            Assert.Contains(_shortDescription, contentResult.Content);
+            var optimizedAdResponse = Assert.IsType<OptimizeAdResponse>(result.Value);
+            Assert.Contains(Constants.IntroductoryText, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_shortTitle, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_shortDescription, optimizedAdResponse.OptimizedAd);
         }
 
         [Fact]
@@ -147,10 +147,10 @@ namespace AdOptimizer.UnitTests.Controllers
 
             var result = _controller.OptimizeAd(request);
 
-            var contentResult = Assert.IsType<ContentResult>(result.Result);
-            Assert.DoesNotContain(Constants.IntroductoryText, contentResult.Content);
-            Assert.Contains(_shortTitle, contentResult.Content);
-            Assert.Contains(_defaultKeyword, contentResult.Content);
+            var optimizedAdResponse = Assert.IsType<OptimizeAdResponse>(result.Value);
+            Assert.DoesNotContain(Constants.IntroductoryText, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_shortTitle, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_defaultKeyword, optimizedAdResponse.OptimizedAd);
         }
 
         [Theory]
@@ -164,11 +164,11 @@ namespace AdOptimizer.UnitTests.Controllers
 
             var result = _controller.OptimizeAd(request);
 
-            var contentResult = Assert.IsType<ContentResult>(result.Result);
-            Assert.Contains(Constants.IntroductoryText, contentResult.Content);
-            Assert.Contains(_shortTitle, contentResult.Content);
-            Assert.Contains(Constants.LinkText, contentResult.Content);
-            Assert.Contains(_defaultKeyword, contentResult.Content);
+            var optimizedAdResponse = Assert.IsType<OptimizeAdResponse>(result.Value);
+            Assert.Contains(Constants.IntroductoryText, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_shortTitle, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(Constants.LinkText, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_defaultKeyword, optimizedAdResponse.OptimizedAd);
         }
 
         [Theory]
@@ -181,10 +181,10 @@ namespace AdOptimizer.UnitTests.Controllers
 
             var result = _controller.OptimizeAd(request);
 
-            var contentResult = Assert.IsType<ContentResult>(result.Result);
-            Assert.Contains(Constants.IntroductoryText, contentResult.Content);
-            Assert.Contains(Constants.LinkText, contentResult.Content);
-            Assert.Contains(_shortTitle, contentResult.Content);
+            var optimizedAdResponse = Assert.IsType<OptimizeAdResponse>(result.Value);
+            Assert.Contains(Constants.IntroductoryText, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(Constants.LinkText, optimizedAdResponse.OptimizedAd);
+            Assert.Contains(_shortTitle, optimizedAdResponse.OptimizedAd);
         }
 
         private OptimizeAdRequest GetOptimizeAdRequest(

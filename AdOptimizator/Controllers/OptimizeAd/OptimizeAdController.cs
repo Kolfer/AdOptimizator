@@ -32,10 +32,13 @@ namespace AdOptimizer.Controllers.OptimizeAd
                 return BadRequest(Errors.TitleExceedsCharacterLimit);
             }
 
-            var result = GetFormattedText(request, characterLimit);
+            var result = new OptimizeAdResponse()
+            {
+                OptimizedAd = GetFormattedText(request, characterLimit)
+            };
 
-            return Content(result);
-        }
+            return result;
+    }
 
         private string GetFormattedText(OptimizeAdRequest request, int characterLimit)
         {
