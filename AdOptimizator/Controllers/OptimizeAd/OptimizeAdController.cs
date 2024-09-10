@@ -10,8 +10,6 @@ namespace AdOptimizer.Controllers.OptimizeAd
         [HttpPost("optimize-ad")]
         public ActionResult<OptimizeAdResponse> OptimizeAd(OptimizeAdRequest request)
         {
-            var characterLimit = Constants.SocialMedia[request.Platform.ToLower()];
-
             if (request == null)
             {
                 return BadRequest(Errors.EmptyRequest);
@@ -27,7 +25,9 @@ namespace AdOptimizer.Controllers.OptimizeAd
                 return BadRequest(Errors.UnknownPlatform);
             }
 
-            if (request.Title.Length + Constants.DefaultLinkLength < characterLimit)
+            var characterLimit = Constants.SocialMedia[request.Platform.ToLower()];
+
+            if (request.Title.Length + Constants.DefaultLinkLength > characterLimit)
             {
                 return BadRequest(Errors.TitleExceedsCharacterLimit);
             }
@@ -46,11 +46,11 @@ namespace AdOptimizer.Controllers.OptimizeAd
 
             if (isDescriptionIncluded)
             {
-                FormatTextWithDescription(request.Title, description, characterLimit, request.Keywords);
+                text = FormatTextWithDescription(request.Title, description, characterLimit, request.Keywords);
             }
             else
             {
-                FormatTextWithoutDescription(request.Title, characterLimit, request.Keywords);
+                text = FormatTextWithoutDescription(request.Title, characterLimit, request.Keywords);
             }
             return text;
         }
@@ -66,11 +66,11 @@ namespace AdOptimizer.Controllers.OptimizeAd
 
             if (AreKeywordsIncluded)
             {
-                FormatTextWithKeywords(title, description, characterLimit, keywordsLength, keywords);
+                text =FormatTextWithKeywords(title, description, characterLimit, keywordsLength, keywords);
             }
             else
             {
-                FormatTextWithoutKeywords(title, description, characterLimit);
+                text = FormatTextWithoutKeywords(title, description, characterLimit);
             }
             return text;
         }
@@ -86,11 +86,11 @@ namespace AdOptimizer.Controllers.OptimizeAd
 
             if (AreKeywordsIncluded)
             {
-                FormatTextWithKeywords(title, Constants.LinkText, characterLimit, keywordsLength, keywords);
+                text = FormatTextWithKeywords(title, Constants.LinkText, characterLimit, keywordsLength, keywords);
             }
             else
             {
-                FormatTextWithoutKeywords(title, Constants.LinkText, characterLimit);
+                text = FormatTextWithoutKeywords(title, Constants.LinkText, characterLimit);
             }
             return text;
         }
