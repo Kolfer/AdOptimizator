@@ -22,5 +22,8 @@ app.UseRouting();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=OptimizeAd}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=GetSupportedPlatforms}/{action=Index}/{id?}");
 
 app.Run();
