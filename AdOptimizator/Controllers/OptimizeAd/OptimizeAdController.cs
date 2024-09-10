@@ -69,7 +69,7 @@ namespace AdOptimizer.Controllers.OptimizeAd
 
             if (AreKeywordsIncluded)
             {
-                text =FormatTextWithKeywords(title, description, characterLimit, keywordsLength, keywords);
+                text = FormatTextWithKeywords(title, description, characterLimit, keywordsLength, keywords);
             }
             else
             {

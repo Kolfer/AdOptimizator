@@ -14,6 +14,6 @@
 
         public const string NoPlatformFitsCharacterLimit = "There is no social media that support provided character limit: {0}.";
 
-        public const string EmptyPlatformList = "The list of platforms is emtpy."
+        public const string EmptyPlatformList = "The list of platforms is emtpy.";
     }
 }
