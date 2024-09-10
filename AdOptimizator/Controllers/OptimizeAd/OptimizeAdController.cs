@@ -20,6 +20,11 @@ namespace AdOptimizer.Controllers.OptimizeAd
                 return BadRequest(Errors.EmptyTitle);
             }
 
+            if(string.IsNullOrWhiteSpace(request.Platform)) 
+            {
+                return BadRequest(Errors.EmptyPlatform);
+            }
+
             if (!Constants.SocialMedia.Keys.Any(c => c.ToLower().Equals(request.Platform.ToLower())))
             {
                 return BadRequest(Errors.UnknownPlatform);

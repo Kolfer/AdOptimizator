@@ -45,6 +45,19 @@ namespace AdOptimizer.UnitTests.Controllers
             Assert.Equal(Errors.EmptyTitle, badRequestResult.Value);
         }
 
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData("    ")]
+        public void OptimizeAd_EmptyPlatform_ReturnsBadRequest(string platform)
+        {
+            var request = GetOptimizeAdRequest(_shortTitle, platform:platform);
+
+            var result = _controller.OptimizeAd(request);
+            var badRequestResult = Assert.IsType<BadRequestObjectResult>(result.Result);
+            Assert.Equal(Errors.EmptyPlatform, badRequestResult.Value);
+        }
+
         [Fact]
         public void OptimizeAd_UnknownPlatform_ReturnsBadRequest()
         {
