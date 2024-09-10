@@ -27,10 +27,14 @@ Contains 2 endpoints:
 _Ready examples:_ https://www.postman.com/satellite-pilot-10362965/adoptimizer/collection/38241899-1f03154e-3e8f-44cf-9b24-b01a4fe57726/?action=share&creator=38241899
 
 ## Notes
+
 Here is a visualized flow for the OptimizeAd method for a better understanding of which parts of text are included:
+
 <details>
   <summary>Click to reveal the image</summary>
-	![OptimizeAd chart](./OprimizeAd-chart.png)
+
+  ![OptimizeAd chart](./OprimizeAd-chart.png)
+
 </details>
 
 ## Examples
