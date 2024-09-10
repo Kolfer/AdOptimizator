@@ -12,8 +12,8 @@
 
         public const string KeywordsText = " #";
 
-        public const string LinkText = "[Paste a link to the job position here.]";
+        public const string LinkText = "Find out about the position here: [Paste a link to the job here.]";
 
-        public const int DefaultLinkLength = 80;
+        public const int DefaultLinkLength = 100;
     }
 }
