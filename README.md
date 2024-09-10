@@ -17,16 +17,24 @@ Contains 2 endpoints:
   5. Press "Execute" button
 
 * **Via Postman:**
-  1. Go to Postman or you can find link with examples below:
-  2. Use link with examples or one of the endpoint links:
+  1. Go to Postman or you can find the link with examples below:
+  2. Use a link with examples or one of the endpoint links:
      * https://localhost:7095/api/get-supported-platforms
      * https://localhost:7095/api/optimize-ad
-    _Ready examples:_ https://www.postman.com/satellite-pilot-10362965/adoptimizer/collection/38241899-1f03154e-3e8f-44cf-9b24-b01a4fe57726/?action=share&creator=38241899
   3. Enter parameters
   4. Press "Send" button
  
+_Ready examples:_ https://www.postman.com/satellite-pilot-10362965/adoptimizer/collection/38241899-1f03154e-3e8f-44cf-9b24-b01a4fe57726/?action=share&creator=38241899
+
+## Notes
+Here is a visualized flow for the OptimizeAd method for a better understanding of which parts of text are included:
+<details>
+  <summary>Click to reveal the image</summary>
+	![OptimizeAd chart](./OprimizeAd-chart.png)
+</details>
+
 ## Examples
-If you want to export examples to Postman via raw data, you can find it below:
+If you want to export examples to Postman using raw data, you can find it below:
 <details>
   <summary>Click to reveal the json text</summary>
 
